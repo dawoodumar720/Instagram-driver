@@ -1,0 +1,6 @@
+Install:
+sudo python -m pip install grpcio
+$ python -m pip install grpcio-tools
+
+Proto Command:
+python -m grpc_tools.protoc -I proto --python_out=. --grpc_python_out=. proto/instagram_user.proto

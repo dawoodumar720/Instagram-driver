@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+service InstagramUser {
+    rpc InstagramUserData(InstagramUserQuery) returns (InstagramUserResponse);
+}
+
+message InstagramUserQuery {
+    string query = 1;
+}
+
+message InstagramUserResponse {
+    string username = 1;
+    int32 followers = 2;
+    int32 following = 3;
+    string bio = 4;
+    string business_category = 5;
+    bool is_verified = 6;
+    int32 video_count = 7;
+    int32 most_recent_video_views = 8;
+    int32 most_recent_video_likes = 9;
+    string transparency_label = 10;
+    string business_contact_info = 11;
+    repeated Post recent_posts = 12;
+
+    message Post {
+        string post_url = 1;
+        string caption = 2;
+    }
+}
